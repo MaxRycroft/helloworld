@@ -33,8 +33,6 @@ RUN JRE_URL=$(wget -q -O - https://public.dhe.ibm.com/ibmdl/export/pub/software/
     && rm /tmp/ibm-java.bin
 ENV JAVA_HOME /opt/ibm/java
 ENV PATH $JAVA_HOME/jre/bin:$PATH
-COPY license-check /opt/ibm/docker/
-COPY view-jre-license /opt/ibm/docker/licenses/
 
 # Install WebSphere Liberty
 ENV LIBERTY_VERSION 2015.5.0_0
