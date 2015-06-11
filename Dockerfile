@@ -18,6 +18,7 @@ MAINTAINER David Currie <david_currie@uk.ibm.com> (@dcurrie)
 
 RUN apt-get update \
     && apt-get install -y wget \
+	&& apt-get install -y unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install JRE
