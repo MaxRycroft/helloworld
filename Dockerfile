@@ -36,11 +36,11 @@ ENV JAVA_HOME /opt/ibm/java
 ENV PATH $JAVA_HOME/jre/bin:$PATH
 
 # Install WebSphere Liberty
-ENV LIBERTY_VERSION 2015.5.0_0
+ENV LIBERTY_VERSION 2015.6.0_0
 ADD wlp-beta-kernel-2015.6.0.0.zip /tmp/
 RUN unzip /tmp/wlp-beta-kernel-2015.6.0.0.zip -d /opt/ibm \
-	&& sudo rm -rf /tmp/
-COPY liberty-run /opt/ibm/wlp/bin/
+	&& rm -rf /tmp/
+# COPY liberty-run /opt/ibm/wlp/bin/
 ENV PATH /opt/ibm/wlp/bin:$PATH
 
 # Configure WebSphere Liberty
