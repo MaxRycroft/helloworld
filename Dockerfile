@@ -37,8 +37,8 @@ ENV PATH $JAVA_HOME/jre/bin:$PATH
 
 # Install WebSphere Liberty
 ENV LIBERTY_VERSION 2015.5.0_0
-RUN cd ..
-	&& cd ..
+RUN cd .. \
+	&& cd .. \
 	&& unzip wlp-beta-kernel-2015.6.0.0.zip -d /opt/ibm
 COPY view-wlp-license /opt/ibm/docker/licenses/
 COPY liberty-run /opt/ibm/wlp/bin/
