@@ -46,7 +46,7 @@ ENV PATH /opt/ibm/wlp/bin:$PATH
 # Configure WebSphere Liberty
 RUN /opt/ibm/wlp/bin/server create \
     && rm -rf /opt/ibm/wlp/usr/servers/.classCache \
-    && featureManager install jaxrs-2.0 --when-file-exists=ignore
+    && featureManager install --acceptLicense jaxrs-2.0 --when-file-exists=ignore
 COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/
 ADD ExampleJaxrs.war /opt/ibm/wlp/usr/servers/defaultServer/dropins/
 EXPOSE 9080
